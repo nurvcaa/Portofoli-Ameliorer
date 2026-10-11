@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Rakha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+                        RAKHA
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Home</a>
+                        <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">About</a>
+                        <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Skills</a>
+                        <a href="#achievements" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Achievements</a>
+                        <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Contact</a>
+                        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                            <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
+                <a href="#achievements" class="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Achievements</a>
+                <a href="#contact" class="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative" style="background-image: url('844543327_2158452675107810_920834690018385033_n.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/90 via-purple-900/80 to-indigo-900/90"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    Hey, I'm <span class="bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent">Rakha Prawira</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    I'm an IT student passionate about technology, programming, and game development. I enjoy turning creative ideas into digital experiences and continuously learning new skills to build meaningful projects.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#skills" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl">
+                        View Projects →
+                    </a>
+                    <a href="#about" class="px-8 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/30">
+                        More about me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-primary-400 to-primary-600 p-1 rounded-2xl">
+                        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl">
+                            <div class="aspect-square bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden">
+                                <img 
+                                    src="WhatsApp Image 2026-10-11 at 7.14.02 PM.jpeg" 
+                                    alt="Rakha Prawira" 
+                                    class="w-full h-full object-cover"
+                                    id="profile-photo"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Who I Am</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                       I'm a university student with a strong interest in software development and interactive digital experiences. I enjoy exploring new technologies, solving problems, and bringing ideas to life through code.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                       I have experience working with Unity and C# to develop 2D games, combining creativity and technical skills to create engaging gameplay experiences. One of my projects is Ancient Wisdom, a game inspired by Indonesian local wisdom and culture.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/raakkhaa" target="_blank" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://tiktok.com/@raakkhaaaaa" target="_blank" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">What Can I Do</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Here are the technologies and tools I work with to bring ideas to life.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Game Development</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            C#
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            Unity
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            Game Programmer
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            Game Design
+                        </li>
+                    </ul>
+                </div>
+                <!-- Backend -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Frontend Development</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            HTML / CSS
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            JavaScript
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            React / Vue
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            Tailwind CSS
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tools -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Tools
+                    </h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            Figma
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            Blender 3D
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            Aseprite
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            CI/CD Pipelines
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">My Projects</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Check out my game development projects and web applications.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="aspect-video bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="840975427_1506207374664741_4989478625059221115_n.jpg" alt="Ancient Wisdom
+                        " class="w-full h-full object-cover" id="project1-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ancient Wisdom</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Ancient Wisdom is 2D survival adventure game inspired by Indonesian local wisdom. Developed with Unity and C#, Ancient Wisdom combines exploration, resource gathering, shelter building, and villager rescue missions to promote disaster awareness and cultural preservation.</p>
+                        <div class="flex gap-3">
+                          
+                            <a href="https://drive.google.com/drive/folders/1AwsvJwdrOynZKTlbiu85tlfHjqmNLL8J?usp=drive_link" class="flex-1 px-4 py-2 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white text-center rounded-lg transition-colors">
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="aspect-video bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="842465189_4369850166565786_903333311115157624_n.png" alt="Skibidi Attack" class="w-full h-full object-cover" id="project2-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Skibidi Attack</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4"> SKibidi Atack is a fast-paced survival shooter where players battle waves of Skibidi Toilets and survive until the timer runs out in each level. The game combines shooting mechanics, timed challenges, and enemy encounters to deliver an action-packed gaming experience.</p>
+                        <div class="flex gap-3">
+                            
+                            <a href="https://drive.google.com/drive/folders/1-GetoP6AJ511Goo7C_19n6BOeoQjkjUk?usp=drive_link" class="flex-1 px-4 py-2 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white text-center rounded-lg transition-colors">
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="aspect-video bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="838248564_1863222544845918_6140521171122426063_n.png" alt="Cursed Legacy" class="w-full h-full object-cover" id="project3-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cursed Legacy</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Cursed Legacy is a horror-adventure game that follows Jaya, a teenager who inherits a mysterious ancient heirloom dagger from his grandfather. You explore eerie villages and mystical settings, piece together grandfather's old notes, and perform occult rituals to ward off malevolent spirits.</p>
+                        <div class="flex gap-3">
+                          
+                           <a href="#" class="flex-1 px-4 py-2 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white text-center rounded-lg transition-colors">
+                                Private
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="aspect-video bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="Mi5WsF.jpg" alt="Alone In The Dark" class="w-full h-full object-cover" id="project4-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Alone In The Dark</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">"Alone in the Dark" is a thrilling experience that takes players into a mysterious dungeon, where they must fight to escape various obstacles and challenges. In this game, players will explore a rich and interactive 3D environment, filled with thrilling moments.</p>
+                        <div class="flex gap-3">
+                          
+                            <a href="https://yosdi-surya-dinata.itch.io/alone-in-the-dark" class="flex-1 px-4 py-2 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-white text-center rounded-lg transition-colors">
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Have a project in mind or want to collaborate? Feel free to reach out!
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors" placeholder="What's this about?">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none" placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl">
+                        Send Message
+                    </button>
+                </form>
+                <div class="mt-12 flex justify-center gap-6">
+                    <a href="mailto:your@email.com" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        rakhaprawiranegara123@gmail.com
+                    </a>
+                    <a href="https://instagram.com/raakkhaa" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="https://tiktok.com/@raakkhaaaaa" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        TikTok
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2026 Muhammad Rakha Prawiranegara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.classList.toggle('dark', savedTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission (prevent default for demo)
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form.');
+        });
+    </script>
+</body>
+</html>
